@@ -7,6 +7,7 @@
   >
     <Navigation is-connected />
     <Hero />
+    <List />
   </div>
 </template>
 
@@ -15,7 +16,7 @@ import { ref } from "@vue/reactivity";
 
 import Navigation from "@/modules/Navigation/Navigation.vue";
 
-import { Hero } from "./components";
+import { Hero, List } from "./components";
 
 export default {
   name: "Welcome",
@@ -23,6 +24,7 @@ export default {
   components: {
     Hero,
     Navigation,
+    List,
   },
 
   setup() {
