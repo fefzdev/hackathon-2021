@@ -10,12 +10,16 @@
         réglages 😉
       </p>
       <Selector class="selector" />
+      <DokiButton class="button" is-purple @click="$emit('submit')"
+        >Valider mon choix</DokiButton
+      >
     </Wrapper>
   </section>
 </template>
 
 <script>
 import Wrapper from "@/components/Wrapper";
+import DokiButton from "@/components/DokiButton";
 
 import Selector from "./Selector.vue";
 
@@ -25,13 +29,15 @@ export default {
   components: {
     Wrapper,
     Selector,
+    DokiButton,
   },
+
+  emits: ["submit"],
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  height: 100vh;
   min-height: 700px;
   padding: 124px 0 48px;
 }
@@ -59,5 +65,9 @@ h2 {
 
 .selector {
   margin-top: 56px;
+}
+
+.button {
+  margin-top: 80px;
 }
 </style>

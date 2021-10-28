@@ -1,5 +1,10 @@
 <template>
-  <component :is="componentType" class="dokiButton" :href="href">
+  <component
+    :is="componentType"
+    class="dokiButton"
+    :class="{ purple: isPurple }"
+    :href="href"
+  >
     <slot />
   </component>
 </template>
@@ -14,6 +19,10 @@ export default {
     href: {
       type: String,
       default: "",
+    },
+    isPurple: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -40,5 +49,10 @@ export default {
   color: $white-100;
   font-size: 24px;
   cursor: pointer;
+}
+
+.purple {
+  background-color: $purple-100;
+  color: $white-100;
 }
 </style>

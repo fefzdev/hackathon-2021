@@ -1,12 +1,15 @@
 <template>
   <div id="welcome">
     <Hero />
-    <Select />
+    <Select @submit="isPopupDisplayed = true" />
+    <SignInPopup v-model:is-displayed="isPopupDisplayed" />
   </div>
 </template>
 
 <script>
-import { Hero, Select } from "./components";
+import { ref } from "@vue/reactivity";
+
+import { Hero, Select, SignInPopup } from "./components";
 
 export default {
   name: "Welcome",
@@ -14,6 +17,14 @@ export default {
   components: {
     Hero,
     Select,
+    SignInPopup,
+  },
+
+  setup() {
+    const isPopupDisplayed = ref(false);
+    return {
+      isPopupDisplayed,
+    };
   },
 };
 </script>

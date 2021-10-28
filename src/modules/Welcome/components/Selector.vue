@@ -87,7 +87,7 @@ export default {
   max-width: 1060px;
   max-height: 560px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
