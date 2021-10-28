@@ -1,29 +1,30 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const path = require('path')
-const fs = require('fs')
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const path = require("path");
+const fs = require("fs");
 
 // Generate pages object
-const pages = {}
+const pages = {};
 
-function getEntryFile (entryPath) {
-  let files = fs.readdirSync(entryPath)
-  return files
+function getEntryFile(entryPath) {
+  let files = fs.readdirSync(entryPath);
+  return files;
 }
 
-const chromeName = getEntryFile(path.resolve(`src/entry`))
+const chromeName = getEntryFile(path.resolve(`src/entry`));
 
-function getFileExtension (filename) {
-  return (/[.]/.exec(filename)) ? /[^.]+$/.exec(filename)[0] : undefined
+function getFileExtension(filename) {
+  return /[.]/.exec(filename) ? /[^.]+$/.exec(filename)[0] : undefined;
 }
 chromeName.forEach((name) => {
-  const fileExtension = getFileExtension(name)
-  const fileName = name.replace('.' + fileExtension, '')
+  const fileExtension = getFileExtension(name);
+  const fileName = name.replace("." + fileExtension, "");
   pages[fileName] = {
     entry: `src/entry/${name}`,
-    template: 'public/index.html',
-    filename: `${fileName}.html`
-  }
-})
+    template: "public/index.html",
+    filename: `${fileName}.html`,
+  };
+});
 
 module.exports = {
   pages,
@@ -33,13 +34,23 @@ module.exports = {
       CopyWebpackPlugin([
         {
           from: path.resolve(`src/manifest.${process.env.NODE_ENV}.json`),
-          to: `${path.resolve('dist')}/manifest.json`
-        }
-      ])
+          to: `${path.resolve("dist")}/manifest.json`,
+        },
+      ]),
     ],
     output: {
       filename: `js/[name].js`,
-      chunkFilename: `[name].js`
-    }
-  }
-}
+      chunkFilename: `[name].js`,
+    },
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+          @import "@/scss/_variables.scss";
+          @import "@/scss/_typo.scss";
+        `,
+      },
+    },
+  },
+};

@@ -1,0 +1,53 @@
+$black-100: #0c0c0c;
+$black-75: #494949;
+$black-50: #858585;
+$black-25: #858585;
+
+$white-100: #f1f1f1;
+$white-75: #f5f5f5;
+$white-50: #f7f7f7;
+$white-25: #fbfbfb;
+
+$purple-100: #9d78eb;
+$purple-75: #b69af0;
+$purple-50: #cdbbf4;
+$purple-25: #e6ddfa;
+
+$red-100: #f3151a;
+$red-75: #f65053;
+$red-50: #f8898c;
+$red-25: #fcc4c5;
+
+$green-100: #18a958;
+$green-75: #52bf82;
+$green-50: #8bd3ab;
+$green-25: #c5e9d5;
+
+@mixin big-title {
+  font-size: 80px;
+  font-family: Magilio, sans-serif;
+}
+
+@mixin title {
+  font-size: 56px;
+  font-weight: 600;
+  font-family: LeagueSpartan, sans-serif;
+}
+
+@mixin small-title {
+  font-size: 34px;
+  font-weight: 500;
+  font-family: LeagueSpartan, sans-serif;
+}
+
+@mixin body {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: LeagueSpartan, sans-serif;
+}
+
+@mixin regular-body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: LeagueSpartan, sans-serif;
+}
