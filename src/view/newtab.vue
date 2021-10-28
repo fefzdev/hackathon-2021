@@ -8,7 +8,7 @@
 <script>
 import { ref } from "@vue/reactivity";
 
-import Navigation from "@/components/Nav";
+import Navigation from "@/modules/Navigation/Navigation.vue";
 import Popup from "@/components/Popup";
 
 export default {

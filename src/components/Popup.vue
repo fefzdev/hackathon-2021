@@ -29,7 +29,7 @@ export default {
   border-radius: 4px;
   width: 400px;
   padding: 24px;
-  background-color: $white-100;
+  // background-color: $white-100;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -46,7 +46,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba($color: $black-100, $alpha: 0);
+  // background-color: rgba($color: $black-100, $alpha: 0);
   pointer-events: none;
   transition: opacity 0.3s ease;
   backdrop-filter: blur(1px);
