@@ -64,6 +64,7 @@ export default {
   height: 446px;
   color: $white-100;
   cursor: pointer;
+  will-change: padding-bottom;
   transition: padding-bottom 0.3s;
 }
 
@@ -113,6 +114,7 @@ export default {
   bottom: -60px;
   background: #0c0c0c80;
   backdrop-filter: blur(2px);
+  will-change: bottom;
   transition: bottom 0.3s;
 }
 

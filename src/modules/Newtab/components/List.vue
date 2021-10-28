@@ -11,17 +11,22 @@
           :title="title"
           :card-type="cardType"
           :class="{ big: isBig }"
+          @click="isPopupDisplayed = true"
         />
       </div>
 
       <p class="endMessage">Reviens demain pour la suite 😎</p>
     </Wrapper>
+    <CardPopup v-model:isActive="isPopupDisplayed" />
   </section>
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
+
 import Wrapper from "@/components/Wrapper";
 
+import CardPopup from "./CardPopup.vue";
 import Card from "./Card.vue";
 import { getCards } from "./CARDS.js";
 
@@ -31,12 +36,16 @@ export default {
   components: {
     Wrapper,
     Card,
+    CardPopup,
   },
 
   setup() {
     const cards = getCards();
+    const isPopupDisplayed = ref(false);
+
     return {
       cards,
+      isPopupDisplayed,
     };
   },
 };

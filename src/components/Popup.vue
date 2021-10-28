@@ -1,7 +1,15 @@
 <template>
-  <div v-if="isActive" :class="{ active: isActive }">
-    <div class="container">
-      <button @click="$emit('update:isActive', false)">close</button>
+  <div :class="{ active: isActive }">
+    <div
+      class="container"
+      :style="{
+        backgroundImage: 'url(' + require('@/assets/background-3.svg') + ')',
+      }"
+    >
+      <button class="closeButton" @click="$emit('update:isActive', false)">
+        X
+      </button>
+      <slot />
     </div>
     <div class="backdrop" @click="$emit('update:isActive', false)" />
   </div>
@@ -24,29 +32,35 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  z-index: 2;
-  height: 400px;
-  border-radius: 4px;
-  width: 400px;
+  z-index: 10;
+  height: 100%;
+  border-radius: 25px 0 0 25px;
+  max-width: 600px;
   padding: 24px;
-  // background-color: $white-100;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  background-color: $purple-100;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: scroll;
+}
+
+.closeButton {
+  align-self: flex-end;
 }
 
 .backdrop {
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: 9;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  // background-color: rgba($color: $black-100, $alpha: 0);
+  background-color: rgba($color: $black-100, $alpha: 0);
   pointer-events: none;
   transition: opacity 0.3s ease;
   backdrop-filter: blur(1px);
@@ -60,8 +74,7 @@ export default {
     pointer-events: all;
   }
   .container {
-    opacity: 1;
-    pointer-events: all;
+    transform: translateX(0);
   }
 }
 </style>
