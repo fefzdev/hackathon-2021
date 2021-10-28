@@ -7,9 +7,10 @@
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
+
 import Wrapper from "@/components/Wrapper";
 import SideBar from "@/components/SideBar";
-import { ref } from "@vue/reactivity";
 
 export default {
   components: {

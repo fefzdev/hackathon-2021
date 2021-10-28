@@ -13,14 +13,14 @@
 export default {
   name: "SideBar",
 
-  emits: ["update:isActive"],
-
   props: {
     isActive: {
       type: Boolean,
       default: false,
     },
   },
+
+  emits: ["update:isActive"],
 };
 </script>
 
