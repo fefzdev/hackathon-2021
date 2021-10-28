@@ -30,10 +30,18 @@ $green-25: #c5e9d5;
 
 @mixin title {
   font-size: 56px;
+  font-weight: 600;
   font-family: LeagueSpartan sans-serif;
 }
 
 @mixin small-title {
   font-size: 34px;
+  font-weight: 500;
+  font-family: LeagueSpartan sans-serif;
+}
+
+@mixin body {
+  font-size: 24px;
+  font-weight: 400;
   font-family: LeagueSpartan sans-serif;
 }
