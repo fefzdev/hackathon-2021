@@ -4,6 +4,7 @@
     <Hero />
     <Select @submit="isPopupDisplayed = true" />
     <SignInPopup v-model:is-displayed="isPopupDisplayed" />
+    <Footer />
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import { ref } from "@vue/reactivity";
 
 import Navigation from "@/modules/Navigation/Navigation.vue";
+import Footer from "@/modules/Footer/Footer.vue";
 
 import { Hero, Select, SignInPopup } from "./components";
 
@@ -22,6 +24,7 @@ export default {
     Select,
     SignInPopup,
     Navigation,
+    Footer,
   },
 
   setup() {

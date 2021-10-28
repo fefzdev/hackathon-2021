@@ -39,7 +39,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   min-height: 700px;
-  padding: 124px 0 48px;
+  padding: 124px 0;
 }
 
 .inner {
