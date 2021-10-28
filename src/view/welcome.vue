@@ -1,10 +1,16 @@
 <template>
-  <h1>Welcome</h1>
+  <WelcomeModule />
 </template>
 
 <script>
+import WelcomeModule from "@/modules/Welcome";
+
 export default {
   name: "Welcome",
+
+  components: {
+    WelcomeModule,
+  },
 };
 </script>
 
