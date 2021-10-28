@@ -36,7 +36,7 @@ export default {
   height: 100%;
   border-radius: 25px 0 0 25px;
   max-width: 600px;
-  padding: 24px;
+  padding: 32px;
   background-color: $purple-100;
   position: fixed;
   display: flex;
@@ -60,16 +60,16 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba($color: $black-100, $alpha: 0);
+  background-color: rgba($color: $purple-100, $alpha: 0);
   pointer-events: none;
   transition: opacity 0.3s ease;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   opacity: 0;
 }
 
 .active {
   .backdrop {
-    background-color: rgba($color: $black-100, $alpha: 0.1);
+    background-color: rgba($color: $purple-100, $alpha: 0.25);
     opacity: 1;
     pointer-events: all;
   }

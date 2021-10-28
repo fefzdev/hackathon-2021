@@ -79,6 +79,7 @@ export default {
 <style lang="scss" scoped>
 h3 {
   @include small-title;
+  font-family: Magilio, sans-serif;
   color: $white-100;
   margin-top: 54px;
 }
