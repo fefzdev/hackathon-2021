@@ -1,17 +1,15 @@
 <template>
-  <div class="container" :class="{ active: isActive }">
-    <button @click="$emit('update:isActive', false)">close</button>
+  <div v-if="isActive" :class="{ active: isActive }">
+    <div class="container">
+      <button @click="$emit('update:isActive', false)">close</button>
+    </div>
+    <div class="backdrop" @click="$emit('update:isActive', false)" />
   </div>
-  <div
-    class="backdrop"
-    :class="{ active: isActive }"
-    @click="$emit('update:isActive', false)"
-  />
 </template>
 
 <script>
 export default {
-  name: "SideBar",
+  name: "Popup",
 
   props: {
     isActive: {
@@ -24,7 +22,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .container {
   z-index: 2;
   height: 400px;
@@ -39,11 +37,6 @@ export default {
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: opacity 0.3s ease;
-
-  &.active {
-    opacity: 1;
-    pointer-events: all;
-  }
 }
 
 .backdrop {
@@ -58,9 +51,15 @@ export default {
   transition: opacity 0.3s ease;
   backdrop-filter: blur(1px);
   opacity: 0;
+}
 
-  &.active {
+.active {
+  .backdrop {
     background-color: rgba($color: $black-100, $alpha: 0.1);
+    opacity: 1;
+    pointer-events: all;
+  }
+  .container {
     opacity: 1;
     pointer-events: all;
   }
