@@ -2,7 +2,7 @@
   <component
     :is="componentType"
     class="dokiButton"
-    :class="{ purple: isPurple }"
+    :class="{ purple: isPurple, white: isWhite }"
     :href="href"
   >
     <slot />
@@ -21,6 +21,10 @@ export default {
       default: "",
     },
     isPurple: {
+      type: Boolean,
+      default: false,
+    },
+    isWhite: {
       type: Boolean,
       default: false,
     },
@@ -54,5 +58,10 @@ export default {
 .purple {
   background-color: $purple-100;
   color: $white-100;
+}
+
+.white {
+  background-color: $white-100;
+  color: $purple-100;
 }
 </style>

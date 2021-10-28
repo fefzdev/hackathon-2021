@@ -1,34 +1,15 @@
 <template>
-  <Navigation />
-  <h1><span>Newt</span>ab</h1>
-  <button @click="togglePopup">toggle</button>
-  <Popup v-model:is-active="popupDisplayed" />
+  <NewtabModule />
 </template>
 
 <script>
-import { ref } from "@vue/reactivity";
-
-import Navigation from "@/modules/Navigation/Navigation.vue";
-import Popup from "@/components/Popup";
+import NewtabModule from "@/modules/Newtab/Newtab.vue";
 
 export default {
   name: "Newtab",
 
   components: {
-    Navigation,
-    Popup,
-  },
-
-  setup() {
-    const popupDisplayed = ref(false);
-    const togglePopup = () => {
-      popupDisplayed.value = !popupDisplayed.value;
-    };
-
-    return {
-      popupDisplayed,
-      togglePopup,
-    };
+    NewtabModule,
   },
 };
 </script>

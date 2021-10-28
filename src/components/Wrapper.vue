@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 .inner {
-  max-width: 1200px;
+  max-width: 1090px;
   margin: 0 auto;
   padding: 0 24px;
 }

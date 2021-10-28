@@ -37,7 +37,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   display: flex;
-  gap: 8px;
+  gap: 16px;
 }
 
 li {
@@ -46,7 +46,6 @@ li {
   }
   svg {
     display: block;
-    stroke: $white-100;
   }
 }
 </style>
