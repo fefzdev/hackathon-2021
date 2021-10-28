@@ -53,9 +53,11 @@ export default {
 }
 
 h1 {
-  font-size: 80px;
+  @include big-title;
   color: $white-100;
   text-align: center;
+  text-shadow: -2px -2px 0 $purple-100, 2px -2px 0 $purple-100,
+    -2px 2px 0 $purple-100, 2px 2px 0 $purple-100;
 
   span {
     font-size: 144px;
@@ -64,9 +66,11 @@ h1 {
 }
 
 p {
-  font-size: 56px;
+  @include title;
   color: $white-100;
   text-align: center;
+  text-shadow: -2px -2px 0 $purple-100, 2px -2px 0 $purple-100,
+    -2px 2px 0 $purple-100, 2px 2px 0 $purple-100;
 }
 
 .button {

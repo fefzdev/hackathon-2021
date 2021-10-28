@@ -22,3 +22,18 @@ $green-100: #18a958;
 $green-75: #52bf82;
 $green-50: #8bd3ab;
 $green-25: #c5e9d5;
+
+@mixin big-title {
+  font-size: 80px;
+  font-family: Magilio sans-serif;
+}
+
+@mixin title {
+  font-size: 56px;
+  font-family: LeagueSpartan sans-serif;
+}
+
+@mixin small-title {
+  font-size: 34px;
+  font-family: LeagueSpartan sans-serif;
+}
