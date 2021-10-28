@@ -1,15 +1,16 @@
 <template>
   <header id="nav">
     <Wrapper class="inner">
-      <Logo />
-      <GoogleBar class="bar" />
-      <MenuList class="menu" />
+      <Logo class="logo" />
+      <GoogleBar v-if="isConnected" class="bar" />
+      <MenuList v-if="isConnected" class="menu" />
+      <p v-if="!isConnected">Déjà un compte ? Connectez-vous</p>
     </Wrapper>
   </header>
 </template>
 
 <script>
-import Logo from "@/components/Logo";
+import Logo from "@/assets/logo.svg?inline";
 import Wrapper from "@/components/Wrapper";
 
 import { GoogleBar, MenuList } from "./components";
@@ -23,24 +24,46 @@ export default {
     GoogleBar,
     MenuList,
   },
+
+  props: {
+    isConnected: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 #nav {
   width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px #00000026;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 76px;
 }
 
 .inner {
-  padding: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 .bar {
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
+}
+
+.logo {
+  height: 40px;
+}
+
+p {
+  font-size: 16px;
 }
 </style>

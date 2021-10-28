@@ -10,16 +10,17 @@
       <h2>Creer votre compte Doki</h2>
       <p>pour sauvegarder vos préférences et profitez pleinement</p>
       <div class="buttonList">
-        <button
+        <a
           v-for="({ text, color }, index) in buttonList"
           :key="index"
+          href="/newtab"
           :style="{
             backgroundColor: color,
           }"
           class="button"
         >
           {{ text }}
-        </button>
+        </a>
       </div>
     </Wrapper>
   </section>
@@ -87,6 +88,7 @@ export default {
 .signInPopup {
   position: fixed;
   top: 0;
+  z-index: 6;
   left: 0;
   height: 100vh;
   width: 100%;
@@ -125,5 +127,6 @@ p {
   max-width: 350px;
   width: 100%;
   cursor: pointer;
+  text-decoration: none;
 }
 </style>
