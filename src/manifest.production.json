@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "doki",
+  "description": "chrome extension",
+  "version": "0.0.1",
+  "background": {
+    "service_worker": "/js/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "content.html"
+  }
+}
