@@ -6,10 +6,8 @@
   "background": {
     "service_worker": "/js/background.js"
   },
-  "action": {
-    "default_popup": "popup.html"
-  },
   "chrome_url_overrides": {
-    "newtab": "content.html"
-  }
+    "newtab": "newtab.html"
+  },
+  "action": {}
 }

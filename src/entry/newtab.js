@@ -1,4 +1,4 @@
 import { createApp } from "vue";
-import App from "../view/content.vue";
+import App from "../view/newtab.vue";
 
 createApp(App).mount("#app");
