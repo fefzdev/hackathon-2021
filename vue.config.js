@@ -47,10 +47,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         additionalData: `
-          @import "@/scss/_reset.scss";
           @import "@/scss/_variables.scss";
-          @import "@/scss/_typo.scss";
-          @import "@/scss/_global.scss";
         `,
       },
     },
