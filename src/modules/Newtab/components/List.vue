@@ -59,6 +59,8 @@ export default {
 
 h2 {
   @include title;
+  @include magilio-font;
+
   color: $purple-100;
 }
 
@@ -75,6 +77,8 @@ h2 {
 
 .endMessage {
   @include small-title;
+  @include magilio-font;
+
   color: $green-100;
   text-align: center;
   margin-top: 80px;

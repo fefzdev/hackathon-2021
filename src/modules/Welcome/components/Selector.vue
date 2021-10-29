@@ -37,36 +37,43 @@ export default {
         view: require("@/assets/categories/art-numerique.svg"),
         isSelected: false,
         style: randomPosition(-50, 146),
+        id: "Art Numerique",
       },
       {
         view: require("@/assets/categories/artistes.svg"),
         isSelected: false,
         style: randomPosition(-50, -52),
+        id: "Artistes",
       },
       {
         view: require("@/assets/categories/livres.svg"),
         isSelected: false,
         style: randomPosition(-53, 17),
+        id: "Livres",
       },
       {
         view: require("@/assets/categories/musique.svg"),
         isSelected: false,
         style: randomPosition(43, 10),
+        id: "Musique",
       },
       {
-        view: require("@/assets/categories/photographie.svg"),
+        view: require("@/assets/categories/photographie.png"),
         isSelected: false,
         style: randomPosition(21, 104),
+        id: "Photographie",
       },
       {
         view: require("@/assets/categories/street-art.svg"),
         isSelected: false,
         style: randomPosition(23, -66),
+        id: "Street Art",
       },
       {
         view: require("@/assets/categories/film.svg"),
         isSelected: false,
         style: randomPosition(-31, -37),
+        id: "Films",
       },
     ]);
 

@@ -82,6 +82,7 @@ export default {
   h3 {
     @include small-title;
     margin-top: 4px;
+    @include magilio-font;
   }
 
   span {

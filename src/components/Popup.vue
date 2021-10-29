@@ -51,6 +51,12 @@ export default {
 
 .closeButton {
   align-self: flex-end;
+  @include magilio-font;
+  background-color: transparent;
+  border: 0;
+  font-size: 24px;
+  color: $white-100;
+  cursor: pointer;
 }
 
 .backdrop {

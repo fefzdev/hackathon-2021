@@ -51,3 +51,7 @@ $green-25: #c5e9d5;
   font-weight: 400;
   font-family: LeagueSpartan, sans-serif;
 }
+
+@mixin magilio-font {
+  font-family: Magilio, sans-serif;
+}

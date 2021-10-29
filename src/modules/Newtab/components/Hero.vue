@@ -2,6 +2,7 @@
   <section class="container">
     <Wrapper class="inner">
       <img class="doky" :src="dokyRound" alt="" />
+      <MusiqueBadge class="badge" />
       <p class="callout">L’artiste du jour</p>
       <h1>Ed sheeran</h1>
       <p class="description">
@@ -29,6 +30,7 @@ import DokiButton from "@/components/DokiButton";
 import dokyRound from "@/assets/doky-round.png";
 import artist from "@/assets/artist.png";
 import EyeIcon from "@/assets/eye.svg?inline";
+import MusiqueBadge from "@/assets/categories/musique.svg?inline";
 
 export default {
   name: "Hero",
@@ -37,6 +39,7 @@ export default {
     Wrapper,
     DokiButton,
     EyeIcon,
+    MusiqueBadge,
   },
 
   setup() {
@@ -62,6 +65,15 @@ export default {
   position: relative;
 }
 
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%) rotate(15deg);
+  width: 200px;
+  height: 200px;
+}
+
 .doky {
   position: absolute;
   top: 0;
@@ -75,6 +87,7 @@ export default {
 
 h1 {
   font-size: 144px;
+  @include magilio-font;
 }
 
 p {

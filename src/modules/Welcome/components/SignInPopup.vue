@@ -7,6 +7,7 @@
     }"
   >
     <Wrapper class="inner">
+      <DokiRound class="sticker" />
       <h2>Creer votre compte Doki</h2>
       <p>pour sauvegarder vos préférences et profitez pleinement</p>
       <div class="buttonList">
@@ -31,12 +32,14 @@ import { reactive } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
 
 import Wrapper from "@/components/Wrapper";
+import DokiRound from "@/assets/doki-round-blue.svg?inline";
 
 export default {
   name: "SignInPopup",
 
   components: {
     Wrapper,
+    DokiRound,
   },
 
   props: {
@@ -100,6 +103,12 @@ export default {
   margin: auto;
   text-align: center;
   color: $white-100;
+}
+
+.sticker {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 h2 {

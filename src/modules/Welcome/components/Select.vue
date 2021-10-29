@@ -52,12 +52,14 @@ export default {
 h2 {
   @include small-title;
   text-align: center;
+  max-width: 800px;
   span {
     color: $purple-100;
   }
 }
 
 .description {
+  max-width: 800px;
   text-align: center;
   @include body;
   margin-top: 16px;
