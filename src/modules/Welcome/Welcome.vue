@@ -3,7 +3,7 @@
     <Navigation />
     <Hero />
     <Select @submit="isPopupDisplayed = true" />
-    <SignInPopup v-model:is-displayed="isPopupDisplayed" />
+    <SignInPopup v-if="isPopupDisplayed" />
     <Footer />
   </div>
 </template>

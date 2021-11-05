@@ -1,6 +1,5 @@
 <template>
   <section
-    v-if="isDisplayed"
     class="signInPopup"
     :style="{
       backgroundImage: 'url(' + require('@/assets/background.svg') + ')',
@@ -14,7 +13,7 @@
         <a
           v-for="({ text, color }, index) in buttonList"
           :key="index"
-          href="/newtab"
+          href="/newtab.html"
           :style="{
             backgroundColor: color,
           }"
@@ -29,7 +28,7 @@
 
 <script>
 import { reactive } from "@vue/reactivity";
-import { watch } from "@vue/runtime-core";
+import { onMounted } from "@vue/runtime-core";
 
 import Wrapper from "@/components/Wrapper";
 import DokiRound from "@/assets/doki-round-blue.svg?inline";
@@ -51,7 +50,7 @@ export default {
 
   emits: ["update:isDisplayed"],
 
-  setup(props) {
+  setup() {
     const buttonList = reactive([
       {
         text: "S’inscrire avec Google",
@@ -75,9 +74,8 @@ export default {
       },
     ]);
 
-    watch(props.isDisplayed, (before, value) => {
-      if (value) document.querySelector("body").style.overflow = "hidden";
-      else document.querySelector("body").style.overflow = "";
+    onMounted(() => {
+      document.querySelector("body").style.overflow = "hidden";
     });
 
     return {

@@ -9,15 +9,21 @@
         Ne vous en faites pas, vous pourrez toujours modifier ça dans vos
         réglages 😉
       </p>
-      <Selector class="selector" />
+      <Selector class="selector" @add-selection="selectList = $event" />
+      <ul v-if="selectList" class="selectionList">
+        <li>Votre selection :</li>
+        <li v-for="(item, id) in selectList" :key="id">{{ item }}</li>
+      </ul>
       <DokiButton class="button" is-purple @click="$emit('submit')"
-        >Valider mon choix</DokiButton
-      >
+        >Valider mon choix
+      </DokiButton>
     </Wrapper>
   </section>
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
+
 import Wrapper from "@/components/Wrapper";
 import DokiButton from "@/components/DokiButton";
 
@@ -33,6 +39,12 @@ export default {
   },
 
   emits: ["submit"],
+
+  setup() {
+    return {
+      selectList: ref(null),
+    };
+  },
 };
 </script>
 
@@ -67,6 +79,22 @@ h2 {
 
 .selector {
   margin-top: 56px;
+}
+
+.selectionList {
+  display: none;
+  padding: 16px;
+  display: flex;
+  @include body;
+  li {
+    position: relative;
+    padding: 0 4px;
+
+    &:not(:first-child):not(:last-child)::after {
+      content: "qzdq";
+      position: absolute;
+    }
+  }
 }
 
 .button {

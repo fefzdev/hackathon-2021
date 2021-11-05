@@ -4,9 +4,9 @@
       v-for="(item, index) in buttonsList"
       :key="index"
       class="itemContainer"
-      :class="{ selected: item.isSelected }"
+      :class="{ selected: isActive(item.id) }"
       :style="item.style"
-      @click="item.isSelected = !item.isSelected"
+      @click="addSelection(item.id)"
     >
       <img class="item" :src="item.view" />
       <Check class="check" />
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { reactive } from "@vue/reactivity";
+import { reactive, ref } from "@vue/reactivity";
 
 import Check from "@/assets/check.svg?inline";
 
@@ -26,7 +26,9 @@ export default {
     Check,
   },
 
-  setup() {
+  emits: ["add-selection"],
+
+  setup(props, { emit }) {
     const randomPosition = (top, left) => {
       const rotate = Math.floor(Math.random() * 20 - 10);
       return `transform: translate(${left}%, ${top}%) rotate(${rotate}deg); `;
@@ -77,9 +79,24 @@ export default {
       },
     ]);
 
+    const selection = ref([]);
+
+    const addSelection = (id) => {
+      if (selection.value.includes(id)) {
+        const index = selection.value.indexOf(id);
+        selection.value.splice(index, 1);
+      } else selection.value.push(id);
+
+      emit("add-selection", selection);
+    };
+
+    const isActive = (id) => selection.value.includes(id);
+
     return {
       buttonsList,
       randomPosition,
+      addSelection,
+      isActive,
     };
   },
 };
@@ -130,6 +147,7 @@ export default {
   box-sizing: content-box;
   filter: brightness(1);
   animation: filter 0.3s;
+  cursor: pointer;
 }
 
 @keyframes onSelect {
